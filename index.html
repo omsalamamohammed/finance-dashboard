@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">FinTrack</h2>
+
+            <nav class="navigation" aria-label="Main navigation">
+                <a href="#" class="nav-link active">🏠 Dashboard</a>
+                <a href="#categories" class="nav-link">💳 Expenses</a>
+                <a href="#savings" class="nav-link">💰 Savings</a>
+                <a href="#categories" class="nav-link">📊 Reports</a>
+                <a href="#settings" class="nav-link">⚙️ Settings</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Personal Finance</p>
+                <small>Manage your money wisely.</small>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="welcome">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's your financial overview.</p>
+                </div>
+
+                <div class="profile">
+                    <span class="notification">🔔</span>
+                    <div class="avatar" aria-label="Profile">OM</div>
+                    <span>My Account</span>
+                </div>
+            </header>
+
+            <!-- Summary -->
+            <section class="summary" aria-label="Financial summary">
+                <div>
+                    <p>Total Monthly Budget</p>
+                    <h2>$3,000.00</h2>
+                </div>
+                <div>
+                    <p>Total Expenses</p>
+                    <h2>$1,680.00</h2>
+                </div>
+                <div>
+                    <p>Remaining Balance</p>
+                    <h2>$1,320.00</h2>
+                </div>
+            </section>
+
+            <!-- Category cards -->
+            <section id="categories" class="categories">
+                <div class="section-heading">
+                    <div>
+                        <h2>Expense Categories</h2>
+                        <p>Your monthly spending at a glance.</p>
+                    </div>
+                    <span class="period">October 2026</span>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="category-card food" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">🍎</span>
+                            <span class="status">56% used</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Food</h3>
+                            <p>Groceries and meals</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$280</strong>
+                            <span>of $500</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 56%"></span>
+                        </div>
+                    </article>
+
+                    <article class="category-card transport" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">🚗</span>
+                            <span class="status">40% used</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Transport</h3>
+                            <p>Fuel and commuting</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$120</strong>
+                            <span>of $300</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 40%"></span>
+                        </div>
+                    </article>
+
+                    <article class="category-card rent" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">🏠</span>
+                            <span class="status">80% used</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Rent</h3>
+                            <p>Housing and accommodation</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$800</strong>
+                            <span>of $1,000</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 80%"></span>
+                        </div>
+                    </article>
+
+                    <article class="category-card entertainment" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">🎬</span>
+                            <span class="status">30% used</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Entertainment</h3>
+                            <p>Movies and activities</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$90</strong>
+                            <span>of $300</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 30%"></span>
+                        </div>
+                    </article>
+
+                    <article id="savings" class="category-card savings" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">💰</span>
+                            <span class="status">75% of goal</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Savings</h3>
+                            <p>Emergency fund</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$300</strong>
+                            <span>of $400</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 75%"></span>
+                        </div>
+                    </article>
+
+                    <article class="category-card utilities" tabindex="0">
+                        <div class="card-top">
+                            <span class="card-icon">💡</span>
+                            <span class="status">45% used</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Utilities</h3>
+                            <p>Electricity and internet</p>
+                        </div>
+                        <div class="amount">
+                            <strong>$90</strong>
+                            <span>of $200</span>
+                        </div>
+                        <div class="progress">
+                            <span style="width: 45%"></span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <footer id="settings" class="footer">
+                <p>FinTrack Dashboard · Demo financial information</p>
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>

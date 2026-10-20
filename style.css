@@ -1,0 +1,428 @@
+
+/* 1. Color palette */
+:root {
+    --brand-color: #4f46e5;
+    --accent-color: #14b8a6;
+    --background-color: #f4f6fb;
+    --surface-color: #ffffff;
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-color: rgb(15 23 42 / 8%);
+}
+
+/* 2. Basic styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background-color);
+    color: var(--primary-text);
+    line-height: 1.5;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+p {
+    color: var(--secondary-text);
+}
+
+/* 3. Overall layout using CSS Grid */
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+/* 4. Sidebar using Flexbox */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 30px 20px;
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.logo {
+    color: var(--brand-color);
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    color: var(--secondary-text);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active {
+    background: var(--brand-color);
+    color: #ffffff;
+}
+
+.nav-link:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.sidebar-footer p {
+    margin-bottom: 4px;
+    color: var(--primary-text);
+    font-weight: 700;
+}
+
+.sidebar-footer small {
+    color: var(--secondary-text);
+}
+
+/* 5. Main content */
+.main-content {
+    min-width: 0;
+    padding: 32px;
+}
+
+/* 6. Header using Flexbox */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.welcome p {
+    margin-bottom: 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+}
+
+.notification {
+    font-size: 21px;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    color: #ffffff;
+}
+
+/* 7. Financial summary using Grid */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 36px;
+}
+
+.summary > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 14px var(--shadow-color);
+}
+
+.summary p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.summary h2 {
+    margin-bottom: 0;
+    font-size: 26px;
+    color: var(--brand-color);
+}
+
+/* 8. Category heading */
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.section-heading p {
+    margin-bottom: 0;
+}
+
+.period {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--surface-color);
+    color: var(--secondary-text);
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+/* 9. Six category cards using CSS Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    padding: 22px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+}
+
+/* 10. Hover and keyboard focus animation */
+.category-card:hover,
+.category-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px var(--shadow-color);
+}
+
+.category-card:focus-visible {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 3px;
+}
+
+/* Flexbox inside each card */
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--card-tint, #eef2ff);
+    font-size: 24px;
+}
+
+.status {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+.card-info h3 {
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.card-info p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.amount strong {
+    font-size: 24px;
+}
+
+.amount span {
+    color: var(--secondary-text);
+    font-size: 13px;
+}
+
+/* Spending progress bars */
+.progress {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--border-color);
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--card-color, var(--brand-color));
+}
+
+/* Different category colors */
+.food {
+    --card-color: #f59e0b;
+    --card-tint: #fef3c7;
+}
+
+.transport {
+    --card-color: #3b82f6;
+    --card-tint: #dbeafe;
+}
+
+.rent {
+    --card-color: #8b5cf6;
+    --card-tint: #ede9fe;
+}
+
+.entertainment {
+    --card-color: #ec4899;
+    --card-tint: #fce7f3;
+}
+
+.savings {
+    --card-color: #10b981;
+    --card-tint: #d1fae5;
+}
+
+.utilities {
+    --card-color: #f97316;
+    --card-tint: #ffedd5;
+}
+
+/* 11. Footer */
+.footer {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
+}
+
+/* 12. Responsive layout below 768px */
+@media (max-width: 767px) {
+    .dashboard {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sidebar {
+        gap: 18px;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .sidebar-footer {
+        margin-top: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .header {
+        align-items: flex-start;
+    }
+
+    .welcome h1 {
+        font-size: 25px;
+    }
+
+    .profile {
+        flex-wrap: wrap;
+    }
+}
+
+/* 13. Dark theme: override only root variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-color: #818cf8;
+        --accent-color: #2dd4bf;
+        --background-color: #0f172a;
+        --surface-color: #1e293b;
+        --primary-text: #f1f5f9;
+        --secondary-text: #cbd5e1;
+        --border-color: #334155;
+        --shadow-color: rgb(0 0 0 / 25%);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .category-card,
+    .nav-link {
+
+        transition: none;
+    }
+
+    .category-card:hover,
+    .category-card:focus-visible {
+        transform: none;
+    }
+}
+
+
+
